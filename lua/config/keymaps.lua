@@ -13,6 +13,10 @@ vim.keymap.set({ "i", "n", "v" }, "<C-c>", [[<C-\><C-n>]])
 -- Screen Keys
 vim.keymap.set({ "n" }, "<leader>uk", "<cmd>Screenkey<CR>")
 
+-- Presiona Esc dos veces para liberar el teclado de la terminal
+-- y poder usar Ctrl+j / Ctrl+k para moverte entre ventanas.
+vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], { desc = "Salir del modo terminal" })
+
 ----- Tmux Navigation ------
 local nvim_tmux_nav = require("nvim-tmux-navigation")
 
