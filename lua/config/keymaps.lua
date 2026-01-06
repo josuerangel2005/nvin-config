@@ -65,6 +65,29 @@ vim.api.nvim_set_keymap("x", "K", "<Nop>", { noremap = true, silent = true })
 -- Redefine Ctrl+s to save with the custom function
 vim.api.nvim_set_keymap("n", "<C-s>", ":lua SaveFile()<CR>", { noremap = true, silent = true })
 
+-- =============================================================================
+-- ATAJOS ESTILO VS CODE (PERSONALIZADOS)
+-- =============================================================================
+
+-- 1. Ajustar texto a la pantalla (como Alt + z)
+vim.keymap.set("n", "<A-z>", "<cmd>set wrap!<CR>", { desc = "Ajustar texto a la ventana" })
+
+-- 2. Duplicar línea abajo (Shift + Alt + j)
+-- Usamos 't.' que es el comando nativo para duplicar la línea actual
+vim.keymap.set("n", "<A-S-j>", "<cmd>t.<cr>", { desc = "Duplicar línea abajo" })
+
+-- 3. Duplicar línea arriba (Shift + Alt + k)
+vim.keymap.set("n", "<A-S-k>", "<cmd>t-1<cr>", { desc = "Duplicar línea arriba" })
+
+-- 4. Reactivar Movimiento de líneas (Alt + j/k)
+-- Como tenías <Nop>, aquí los activamos de nuevo para que funcionen
+vim.keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Mover línea abajo" })
+vim.keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Mover línea arriba" })
+
+-- También para modo Visual (para mover bloques de código)
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Mover bloque abajo" })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Mover bloque arriba" })
+
 -- Grep keybinding for visual mode - search selected text
 vim.keymap.set("v", "<leader>sg", function()
   -- Get the selected text

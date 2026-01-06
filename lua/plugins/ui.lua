@@ -205,7 +205,7 @@ return {
           header = [[
                                                   _.oo.
                           _.u[[/;:,.          .odMMMMMM'
-                       .o888UU[[[/;:-.  .o@P^    MMM^
+                       .o888UU[[[/;:-.  .o@P^   MMM^
                       oN88888UU[[[/;::-.        dP^     
                      dNMMNN888UU[[[/;:--.   .o@P^      
                     ,MMMMMMN888UU[[/;::-. o@^          
@@ -215,10 +215,10 @@ return {
                 .@^  YUU[[[/o@^;::---..                
               oMP     ^/o@P^;:::---..                  
            .dMMM    .o@^ ^;::---...                    
-          dMMMMMMM@^`        `^^^^                        
-          YMMMUP^                                         
-           ^^                                             
-                                                          
+          dMMMMMMM@^`        `^^^^                     
+          YMMMUP^                                          
+           ^^                                              
+                                                           
 ]],
           -- stylua: ignore
           ---@type snacks.dashboard.Item[]
@@ -245,5 +245,16 @@ return {
       vim.api.nvim_set_hl(0, "SnacksDashboardTitle", { fg = "#ffcc66" })
       vim.api.nvim_set_hl(0, "SnacksDashboardDesc", { fg = "#FFFFFF" }) -- Cambia texto azul a blanco
     end,
+  },
+
+  -- PLUGIN AÑADIDO: Smear Cursor (Rastro animado)
+  {
+    "sphamba/smear-cursor.nvim",
+    event = "VeryLazy",
+    opts = {
+      cursor_color = "#ffcc66", -- Color a juego con tu Dashboard
+      stiffness = 0.6,
+      trailing_stiffness = 0.3,
+    },
   },
 }

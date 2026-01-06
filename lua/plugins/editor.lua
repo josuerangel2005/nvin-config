@@ -81,4 +81,17 @@ return {
       },
     },
   },
+
+  {
+    "mg979/vim-visual-multi",
+    branch = "master",
+    init = function()
+      vim.g.VM_maps = {
+        ["Find Under"] = "<C-n>",
+        ["Add Cursor Down"] = "<C-Down>",
+        ["Add Cursor Up"] = "<C-Up>",
+        ["Select All"] = "<C-a>",
+      }
+    end,
+  },
 }
